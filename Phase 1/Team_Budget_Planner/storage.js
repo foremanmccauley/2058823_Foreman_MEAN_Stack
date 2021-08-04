@@ -1,7 +1,4 @@
 function add() {
-    // take value from text field using id or name
-    //we can store json object. but we have to convert 
-    // into string.
     var clientName = document.getElementById("client").value;
     var projectName = document.getElementById("project").value;
     var budget = document.getElementById("budget").value;
