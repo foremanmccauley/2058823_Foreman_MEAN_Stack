@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="my_formatting.css">
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+    <script src="add_cards.js"></script>
+</head>
+<body onload="javascript:display_current_cards()">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="index.html" class="navbar-brand">Simply Blogging</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="aboutus.html" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a href="contactus.html" class="nav-link">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+    </br>
+        <form style="margin: auto; width: 200px;">
+            <label for="title">Title</label>
+            <input type="text" id="title"/>
+            <label for="article">Article</label>
+            <input type="text" id="article"/></br>
+            <label for="image">Image URL</label>
+            <input type="text" id="image"/></br></br>
+            <input type="button" style="margin-right: 50px" value="Add Blog" onclick="add()"/>
+            <input type="reset" value="Clear"/> <br/><br/>
+        </form>
+    
+    <div class="container">
+        <div class="title">
+            <h1 style="text-align: center;">Your Blogs</h1>
+            <p style="text-align: center;">Add your own blogs here!</p>
+        </div>
+        <div id = "card_area" class="row">
+            
+        </div>
+        
+    </div>
+
+</body>
+</html>
+
