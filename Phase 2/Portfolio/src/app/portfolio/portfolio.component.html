@@ -1,0 +1,22 @@
+<div>
+    <h1>
+        Welcome to your profile, {{user}}!
+    </h1>
+    <input type="button" value="Logout" (click)="logout()"/>
+    <hr/>
+    <form [formGroup]="newContact" (ngSubmit)="addContact()" class="form-group">
+        <label>Contact Name</label>
+        <input type="text" formControlName="contactName" class="form-control"/><br/>
+        <label>Phone Number</label>
+        <input type="text" formControlName="contactNumber" class="form-control"/><br/>
+        <input type="submit" value="Add Contact" class="btn btn-success"/>
+        <input type="reset" value="Reset" class="btn btn-info"/>
+    </form>
+
+    <table border="1" style="margin-left: auto; margin-right: auto;">
+        <tr><th>Contact Name</th><th>Phone Number</th></tr>
+
+        <tr *ngFor="let contact of myContacts"><td>{{contact.contactName}}</td><td>{{contact.contactNumber}}</td></tr>
+    </table>
+
+</div>
