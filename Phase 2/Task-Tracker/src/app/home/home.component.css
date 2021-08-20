@@ -1,0 +1,21 @@
+.task-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.form-full-width {
+    width: 100%;
+}
+
+.form-table {
+    width: 100%;
+}
+
+.form-button-container {
+    padding-bottom: 16px;
+}
+
+.form-button + .form-button {
+    margin-left: 8px;
+}
