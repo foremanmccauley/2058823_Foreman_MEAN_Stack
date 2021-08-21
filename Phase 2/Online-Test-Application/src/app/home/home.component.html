@@ -1,0 +1,16 @@
+<h1 style="text-align: center;">Online Exam</h1>
+<div>
+    <form [formGroup]="questionForm" (ngSubmit)="submit()">
+        <div *ngFor="let q of questionList">
+            <p>{{q.question}} <img id={{q.question}} src=""></p>
+            <input type="radio" formControlName={{q.question}} value={{q.answer1}}/>{{q.answer1}}<br/>
+            <input type="radio" formControlName={{q.question}} value={{q.answer2}}/>{{q.answer2}}<br/>
+            <input type="radio" formControlName={{q.question}} value={{q.answer3}}/>{{q.answer3}}<br/>
+            <input type="radio" formControlName={{q.question}} value={{q.answer4}}/>{{q.answer4}}<br/>
+            <br>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    {{score}}
+</div>
