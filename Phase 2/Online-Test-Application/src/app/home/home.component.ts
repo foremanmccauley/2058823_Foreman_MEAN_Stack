@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
       i++; 
     }
 
-    if (correctAnswers > 6) {
+    if (correctAnswers/this.questionList.length >= 0.7) {
       this.score = "You got " + correctAnswers + " out of " + this.questionList.length + " correct! Result: Passed ";
       alert("You got " + correctAnswers + " out of " + this.questionList.length + " correct! Result: Passed");
     }
