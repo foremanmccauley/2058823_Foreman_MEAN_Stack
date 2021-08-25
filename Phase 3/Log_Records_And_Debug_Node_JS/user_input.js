@@ -9,15 +9,12 @@ var q1 = obj.createInterface({
 
 addUser();
 
+
 function addUser() {
     q1.question("Enter your first name: ",(fName)=> {
-        debugger;
         q1.question("Enter your last name: ",(lName)=> {
-            debugger;
             q1.question("Enter your gender: ",(gender)=> {
-                debugger;
                 q1.question("Enter your email: ",(email)=> {
-                    debugger;
                     let currentDate = new Date();
                     // current date
                     let date = ("0" + currentDate.getDate()).slice(-2);
@@ -62,10 +59,15 @@ function addUser() {
                         let all_users_string = JSON.stringify(all_users);
                         fs.writeFileSync('all_users.json', all_users_string);
                     }
-
                     
                     debugger;
-                    
+                    console.log("First Name is: "+ fName);
+                    debugger;
+                    console.log("Last Name is: "+lName);
+                    debugger;
+                    console.log("Gender is: "+gender);
+                    debugger;
+                    console.log("Email is: "+email);
 
                     q1.close();
                 })
