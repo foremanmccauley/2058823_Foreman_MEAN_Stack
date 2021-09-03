@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+
+        function sendRcvMsg() {
+            let currentDate = new Date();
+            
+            // current date
+            let date = ("0" + currentDate.getDate()).slice(-2);
+
+            // current month
+            let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+
+            // current year
+            let year = currentDate.getFullYear();
+
+            // current hours
+            let hours = currentDate.getHours();
+
+            // current minutes
+            let minutes = currentDate.getMinutes();
+
+            // current seconds
+            let seconds = ("0" + currentDate.getSeconds()).slice(-2);
+
+            socket.emit("clientMsg", "(" + month + "/" + date + "/" + year + " - " + hours + ":" + minutes + ":" + seconds + ") " + document.getElementById('name').value + " says: " + document.getElementById('input').value);
+            document.getElementById('chatbox').innerHTML += "(" + month + "/" + date + "/" + year + " - " + hours + ":" + minutes + ":" + seconds + ") " + document.getElementById('name').value + " says: " + document.getElementById('input').value + "<br><br>";
+        }
+        socket.on("serverMsg",(msg)=> {
+            let currentDate = new Date();
+            
+            // current date
+            let date = ("0" + currentDate.getDate()).slice(-2);
+
+            // current month
+            let month = ("0" + (currentDate.getMonth() + 1)).slice(-2);
+
+            // current year
+            let year = currentDate.getFullYear();
+
+            // current hours
+            let hours = currentDate.getHours();
+
+            // current minutes
+            let minutes = currentDate.getMinutes();
+
+            // current seconds
+            let seconds = ("0" + currentDate.getSeconds()).slice(-2);
+            
+            document.getElementById('chatbox').innerHTML += "(" + month + "/" + date + "/" + year + " - " + hours + ":" + minutes + ":" + seconds + ") Server says: " + msg + "<br><br>";
+        })
+    </script>
+</head>
+<body>
+    <h2>Chatting with Socket IO!</h2>
+    <form action="javascript:sendRcvMsg()">
+        <label for="name"> Name: </label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="input"> Message: </label>
+        <input type="text" id="input" name="input"><br><br>
+        <input type="submit" value="Send message">
+    </form> <br><br>
+    <h2>Chatbox</h2>
+    <div id="chatbox">
+
+    </div>
+</body>
+</html>
