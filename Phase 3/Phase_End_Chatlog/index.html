@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+
+        function sendRcvMsg() {
+            let newChat = {name: document.getElementById("name").value, message: document.getElementById("input").value};
+
+            console.log("before socket is: " + newChat);
+
+            socket.emit("clientMsg", newChat);
+        }
+    </script>
+</head>
+<body>
+    <h2>Send a message to the MongoDB server!</h2>
+    <form action="javascript:sendRcvMsg()">
+        <label for="name"> Name: </label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="input"> Message: </label>
+        <input type="text" id="input" name="input"><br><br>
+        <input type="submit" value="Send message">
+    </form> <br><br>
+</body>
+</html>
